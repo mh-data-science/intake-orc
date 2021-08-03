@@ -6,18 +6,16 @@ import versioneer
 requires = open('requirements.txt').read().strip().split('\n')
 
 setup(
-    name='intake-parquet',
+    name='intake-orc',
     version=versioneer.get_version(),
     cmdclass=versioneer.get_cmdclass(),
-    description='Intake parquet plugin',
-    url='https://github.com/ContinuumIO/intake-parquet',
-    maintainer='Martin Durant',
-    maintainer_email='martin.durant@utoronto.ca',
+    description='Intake ORC plugin',
+    maintainer='Mediahuis Data Team',
+    maintainer_email='dnm-data@mediahuis.be',
     license='BSD',
     packages=find_packages(),
-    # package_data={'': ['*.pcap', '*.yml', '*.html']},
     entry_points={
-        'intake.drivers': ['parquet = intake_parquet.source:ParquetSource']},
+        'intake.drivers': ['orc = intake_orc.source:ORCSource']},
     include_package_data=True,
     install_requires=requires,
     long_description=open('README.md').read(),
